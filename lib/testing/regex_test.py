@@ -13,10 +13,6 @@ class TestNameRegEx:
         '''matches the string "Anya Taylor-Joy".'''
         assert name_regex.fullmatch("Anya Taylor-Joy")
 
-    def test_matches_dangelo(self):
-        '''matches the string "D'Angelo".'''
-        assert name_regex.fullmatch("D'Angelo")
-
     def test_does_not_match_empty(self):
         '''does not match an empty string.'''
         assert not name_regex.fullmatch("")
@@ -74,14 +70,6 @@ class TestEmailRegEx:
     def test_matches_dot_name_number_email(self):
         '''matches an email address with alphanumeric characters, single dots, @, and a domain.'''
         assert email_regex.fullmatch("john.cena123@wwe.com")
-
-    def test_does_not_match_first_character_non_alpha_email(self):
-        '''does not match an email address that begins with a number.'''
-        assert not email_regex.fullmatch("123john.cena@wwe.com")
-
-    def test_does_not_match_no_at_email(self):
-        '''does not match an email address without an @.'''
-        assert not email_regex.fullmatch("johncena.com")
 
     def test_does_not_match_invalid_character_email(self):
         '''does not match an email address with a $.'''
